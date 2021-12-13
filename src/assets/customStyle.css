@@ -152,13 +152,28 @@
 .pd-thumbnails-img {
   padding-left: 0;
   list-style: none;
+  height: 500px;
+  overflow-y: auto;
 }
 .pd-full-img {
   position: absolute;
-  top: 0;
+  top: -1000px;
   left: 0;
-  z-index: 0;
 }
 .pd-full-img > img {
   width: 100%;
+}
+.pd-full-img.active {
+  top: 0;
+}
+.pd-thumb-img {
+  width: 82px;
+  margin-bottom: 15px;
+}
+.pd-thumb-img > img {
+  width: 80px;
+  height: 100px;
+}
+.pd-thumb-img.active {
+  border: 1px solid #000;
 }

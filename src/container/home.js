@@ -7,9 +7,8 @@ function Home(props) {
     
     return(
         <div>
-            <h3>Home page</h3>
-            <h4><Link to="product-list">product List</Link></h4>
-            <h4><Link to="product-details">product Page</Link></h4>
+            <h3>Home Page</h3>
+            <h4><Link to="product-list">Go to Product List Page</Link></h4>
         </div>
     )
 }

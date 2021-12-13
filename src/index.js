@@ -5,10 +5,9 @@ import store from './store/index';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './assets/customStyle.css';
-//</React.StrictMode>
 
 
-// ReactDOM.render(
+
 ReactDOM.hydrate(
     <Provider store={store}>
       <App />

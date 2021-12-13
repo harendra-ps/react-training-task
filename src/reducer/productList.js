@@ -1,4 +1,4 @@
-import { GET_PRODUCT_LIST, ERROR_IN_PRODUCT_LIST, CLEAR_PRODUCT_LIST } from '../actions/constant';
+import { GET_PRODUCT_LIST, ERROR_IN_PRODUCT_LIST } from '../actions/constant';
 
 const initialState = {
     Data: [],
@@ -6,8 +6,6 @@ const initialState = {
 }
 
 export default function productListReducer(state = initialState, action) {
-    // console.log('action: ', action);
-
     switch(action.type){
         case GET_PRODUCT_LIST: return {
             Data: action.payload,
@@ -15,10 +13,6 @@ export default function productListReducer(state = initialState, action) {
         }
         case ERROR_IN_PRODUCT_LIST: return {
             Data: action.payload,
-            loading: false
-        }
-        case CLEAR_PRODUCT_LIST: return {
-            ...state,
             loading: false
         }
         default: return state
