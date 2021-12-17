@@ -1,13 +1,13 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Link } from "react-router-dom";
 import * as actions from '../actions';
 
-import SortBy from '../component/sortBy';
-import PList from '../component/p-list';
-import Filter from "../component/filter";
 import Spinner from '../component/spinner';
+import SortBy from '../component/sortBy';
+import Filter from "../component/filter";
+const PList = lazy(() => import('../component/p-list'));
 
 
 
@@ -101,7 +101,10 @@ class Product_list extends React.Component{
                                 <SortBy sortByCallback={(val) => this.sortByCallback(val)} activeVal={sortBy} />
                             </div>
                         </div>
-                        <PList  hits={hits} />
+                        <Suspense fallback={<div>Loading...</div>} >
+                            <PList  hits={hits} />
+                        </Suspense>
+                        
                     </div>
                 </div>
                 
